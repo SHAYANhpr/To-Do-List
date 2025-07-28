@@ -7,4 +7,8 @@ class Task:
         self.olavit = olavit 
 
     def to_list(self):
-        return [self.name, self.description, self.olavit]    
+        return [self.name, self.description, self.olavit]
+    
+class ToDoList:
+    def __init__(self):
+        self.tasks = []

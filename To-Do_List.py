@@ -54,3 +54,11 @@ def main():
     todo = ToDoList()
     filename = "result.csv"  
     todo.load_from_csv(filename)
+
+    while True:
+        print("\n=== To-do list management ===")
+        print("1.Add task")
+        print("2.Remove task")
+        print("3.Show tasks")
+        print("4.Save list")
+        print("5.Exit")

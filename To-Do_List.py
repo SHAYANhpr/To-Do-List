@@ -5,3 +5,6 @@ class Task:
         self.name = name          
         self.description = description 
         self.olavit = olavit 
+
+    def to_list(self):
+        return [self.name, self.description, self.olavit]    

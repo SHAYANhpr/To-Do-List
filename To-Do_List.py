@@ -15,3 +15,9 @@ class ToDoList:
 
     def add_task(self, task):
         self.tasks.append(task)
+
+    def remove_task(self, index):
+        if 0 <= index < len(self.tasks):
+            del self.tasks[index]
+        else:
+            print("The number entered is invalid.")

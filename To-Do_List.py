@@ -30,4 +30,9 @@ class ToDoList:
             for i, task in enumerate(self.tasks):
                 print(f"{i}. name: {task.name} | description: {task.description} | Priority: {task.Priority}")
 
-    
+    def save_to_csv(self, filename):
+        with open(filename, mode='w', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            for task in self.tasks:
+                writer.writerow(task.to_list())
+        print("The list was saved to the file.")

@@ -49,4 +49,8 @@ class ToDoList:
             print("List loaded from file.")
         except FileNotFoundError:
             print("File not found --> New list created!")
-            
+
+def main():
+    todo = ToDoList()
+    filename = "result.csv"  
+    todo.load_from_csv(filename)

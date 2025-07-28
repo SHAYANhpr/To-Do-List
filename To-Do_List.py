@@ -36,3 +36,17 @@ class ToDoList:
             for task in self.tasks:
                 writer.writerow(task.to_list())
         print("The list was saved to the file.")
+
+    def load_from_csv(self, filename):
+        try:
+            with open(filename, mode='r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                self.tasks = []
+                for row in reader:
+                    if len(row) == 3:
+                        name, description, Priority = row
+                        self.tasks.append(Task(name, description, Priority))
+            print("List loaded from file.")
+        except FileNotFoundError:
+            print("File not found --> New list created!")
+            

@@ -62,3 +62,35 @@ def main():
         print("3.Show tasks")
         print("4.Save list")
         print("5.Exit")
+
+        Choice = input("Enter the desired number: ")
+
+        if Choice == '1':
+            name = input(" Name task: ")
+            description = input(" Description task: ")
+            Priority = input(" Priority (high, medium, low): ")
+            task = Task(name, description, Priority)
+            todo.add_task(task)
+            print(" Task added successfully.")
+
+        elif Choice == '2':
+            todo.show_tasks()
+            try:
+                index = int(input(" Task number to delete: "))
+                todo.remove_task(index)
+            except ValueError:
+                print(" Please enter a number.")
+
+        elif Choice == '3':
+            todo.show_tasks()
+
+        elif Choice == '4':
+            todo.save_to_csv(filename)
+
+        elif Choice == '5':
+            todo.save_to_csv(filename)
+            print(" Successfully registered")
+            break
+
+        else:
+            print(" Invalid option! Enter a number between 1 and 5")
